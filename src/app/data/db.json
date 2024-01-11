@@ -1,12 +1,28 @@
 {
-  "employees":[
+  "employees": [
     {
-      "username" : "madhavi",
-      "roolno" :"9"
+      "employeeId": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "position": "Software Developer",
+      "department": "Engineering",
+      "salary": 80000
     },
     {
-      "username" : "Ramani",
-      "roolno" :"96"
+      "employeeId": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "position": "UX Designer",
+      "department": "Design",
+      "salary": 75000
+    },
+    {
+      "employeeId": 3,
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "position": "Project Manager",
+      "department": "Management",
+      "salary": 90000
     }
   ]
 }

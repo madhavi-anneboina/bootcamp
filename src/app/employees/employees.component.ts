@@ -7,15 +7,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit{
-  employeee:any;
+  employees:any;
   constructor(private http: HttpClient) {
 
   }
  ngOnInit(): void {
  this.http.get("http://localhost:3000/employees").subscribe(
   (data) => {
-    this.employeee = data
-    console.log(this.employeee)
+    this.employees = data
+    console.log(this.employees)
   }
 
   )
