@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
 })
 export class RegisterComponent {
     formRegister:FormGroup;
-     constructor(){ 
+     constructor(private http: HttpClient){ 
     this.formRegister = this.createFormGroup();
   }
     createFormGroup(){
@@ -19,7 +20,13 @@ export class RegisterComponent {
       })
     }
     onsubmit(){
-      console.log(this.formRegister.value)
+        this.http.post(
+          "http://localhost:3000/employees",
+          this.formRegister.value
+          )
+          .subscribe(response =>console.log(response));
     }
+  Oninit():void{
 
+  }
 }

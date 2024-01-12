@@ -23,6 +23,46 @@
       "position": "Project Manager",
       "department": "Management",
       "salary": 90000
+    },
+    {
+      "id": "60fb",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "175d",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "4a45",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "f67d",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "ea22",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "0dad",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "ccbd",
+      "username": "madhavi",
+      "password": "12345"
+    },
+    {
+      "id": "c82d",
+      "username": "1234",
+      "password": "1234"
     }
   ]
 }
