@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent {
   formLogin:FormGroup;
   user$!:Observable<any>
-  constructor(private http: HttpClient){ 
+  constructor(private http: HttpClient, private router:Router){ 
   this.formLogin = this.createFormGroup();
  
 }
@@ -36,8 +38,11 @@ export class LoginComponent {
     this.user$.subscribe(data => {
      if(currentUser == data[0].username && currentPassword == data[0].password){
      console.log("Valid User")
+     localStorage.setItem("Valid User",currentUser)
+     this.router.navigateByUrl('/home')
      }  else{
       console.log("Invalid User")
+      this.router.navigateByUrl('/login')
      }
 
     })
