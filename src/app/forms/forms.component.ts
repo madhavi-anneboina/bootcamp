@@ -12,6 +12,11 @@ export class FormsComponent implements OnInit{
   }
 
     ngOnInit(): void{
+      this.userDetails = new FormGroup({
+        firstName : new FormControl(),
+        lastName : new FormControl()
+
+      })
     }
 
    
