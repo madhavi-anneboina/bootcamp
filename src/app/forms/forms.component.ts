@@ -17,9 +17,12 @@ export class FormsComponent implements OnInit{
         lastName : new FormControl()
 
       })
+      
     }
 
-   
+    onSubmit(){
+        console.log("submitted")
+    }
 
    
 
