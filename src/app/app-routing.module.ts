@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { LoginComponent } from './login/login.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path :'home', component:HomeComponent},
   {path :'register', component:RegisterComponent, pathMatch:"full"},
   {path :'employees', component:EmployeesComponent, pathMatch:"full"},
-  {path :'login', component:LoginComponent, pathMatch:"full"}
+  {path :'login', component:LoginComponent, pathMatch:"full"},
+  {path :'forms', component:FormsComponent, pathMatch:"full"}
 
 ];
 
