@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     EmployeesComponent,
     LoginComponent,
     AdminComponent,
-    FormsComponent
+    FormsComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,

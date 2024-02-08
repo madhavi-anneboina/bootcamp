@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { LoginComponent } from './login/login.component';
 import { FormsComponent } from './forms/forms.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 const routes: Routes = [
   
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path :'register', component:RegisterComponent, pathMatch:"full"},
   {path :'employees', component:EmployeesComponent, pathMatch:"full"},
   {path :'login', component:LoginComponent, pathMatch:"full"},
-  {path :'forms', component:FormsComponent, pathMatch:"full"}
+  {path :'forms', component:FormsComponent, pathMatch:"full"},
+  {path :'form', component:FormBuilderComponent, pathMatch:"full"}
 
 ];
 
