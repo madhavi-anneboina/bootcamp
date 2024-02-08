@@ -29,9 +29,9 @@ export class FormsComponent implements OnInit{
     onSubmit(){
         console.log(this.userDetails)
     }
-     get firstName(){
-     return this.userDetails.get('firstName')!
-   }
+  //    get firstName(){
+  //    return this.userDetails.get('firstName')!
+  //  }
    get lastName(){
     return this.userDetails.get('lastName')!
   }
