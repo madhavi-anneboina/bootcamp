@@ -17,6 +17,9 @@
                    <div *ngIf="firstName.errors?.['minlength']">
                     Minimum Length Required
                </div>
+               <div *ngIf="firstName.errors?.['alaphaCheck']">
+               Name can not be numerics
+           </div>
               </div>
         </div>
         <div class="mb-3">

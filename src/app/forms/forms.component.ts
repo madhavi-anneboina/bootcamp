@@ -1,6 +1,6 @@
 import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl,FormGroup, Validators,AbstractControl } from '@angular/forms';
+import { FormArray, FormControl,FormGroup, Validators,AbstractControl,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -16,8 +16,8 @@ export class FormsComponent implements OnInit{
       this.userDetails = new FormGroup({
        
         fgFullName:new FormGroup({
-         firstName : new FormControl(null,[Validators.required,Validators.minLength(8)]),
-         lastName : new FormControl(null,[Validators.required,Validators.minLength(5)]),
+         firstName : new FormControl(null,[Validators.required,Validators.minLength(8),this.alaphaCheck]),
+         lastName : new FormControl(null,[Validators.required,Validators.minLength(5),this.alaphaCheck]),
         }),
         email : new FormControl(),
         departments: new FormControl(),
