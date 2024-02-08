@@ -10,14 +10,14 @@
                 class="form-control" 
                 formControlName="firstName"
               />
-              <!-- <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+              <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
                    <div *ngIf="firstName.errors?.['required']">
                         Name Required
                    </div>
                    <div *ngIf="firstName.errors?.['minlength']">
                     Minimum Length Required
                </div>
-              </div> -->
+              </div>
         </div>
         <div class="mb-3">
             <label for="lname" class="form-label"> Last Name:</label>
@@ -28,14 +28,14 @@
                 formControlName="lastName"
               />
         </div>
-        <!-- <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
             <div *ngIf="lastName.errors?.['required']">
                  Name Required
             </div>
             <div *ngIf="lastName.errors?.['minlength']">
              Minimum Length Required
         </div>
-       </div> -->
+       </div>
 
         <input type="submit" name="submit"/>
     </div>
