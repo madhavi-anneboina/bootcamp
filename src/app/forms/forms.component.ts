@@ -1,5 +1,6 @@
+import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl,FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl,FormGroup, Validators,AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -13,11 +14,10 @@ export class FormsComponent implements OnInit{
 
     ngOnInit(): void{
       this.userDetails = new FormGroup({
-        // firstName : new FormControl(null,[Validators.required,Validators.minLength(8)]),
-        // lastName : new FormControl(null,[Validators.required,Validators.minLength(5)]),
+       
         fgFullName:new FormGroup({
-          firstName : new FormControl(),
-          lastName : new FormControl()
+         firstName : new FormControl(null,[Validators.required,Validators.minLength(8)]),
+         lastName : new FormControl(null,[Validators.required,Validators.minLength(5)]),
         }),
         email : new FormControl(),
         departments: new FormControl(),
@@ -31,13 +31,22 @@ export class FormsComponent implements OnInit{
     }
 
     onSubmit(){
-        console.log(this.userDetails.value)
+        console.log(this.userDetails)
     }
-  //    get firstName(){
-  //    return this.userDetails.get('firstName')!
-  //  }
+    alaphaCheck(control:AbstractControl):{[key:string]: boolean } | null {
+      const regExp :  RegExp = /^[A-Za-z]+$/;
+      const cValue = control.value
+      if(!regExp.test(cValue)){
+       return {alaphaCheck:true}
+      }
+       return null
+
+    }
+     get firstName(){
+     return this.userDetails?.get('fgFullName')?.get('firstName')!
+   }
    get lastName(){
-    return this.userDetails.get('lastName')!
+    return this.userDetails?.get('fgFullName')?.get('lastName')!
   }
   get email(){
     return this.userDetails.get('email')!
