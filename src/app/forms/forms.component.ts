@@ -13,21 +13,25 @@ export class FormsComponent implements OnInit{
 
     ngOnInit(): void{
       this.userDetails = new FormGroup({
-        firstName : new FormControl(null,[Validators.required,Validators.minLength(8)]),
-        lastName : new FormControl(null,[Validators.required,Validators.minLength(5)]),
+        // firstName : new FormControl(null,[Validators.required,Validators.minLength(8)]),
+        // lastName : new FormControl(null,[Validators.required,Validators.minLength(5)]),
+        fgFullName:new FormGroup({
+          firstName : new FormControl(),
+          lastName : new FormControl()
+        }),
         email : new FormControl(),
         departments: new FormControl(),
         prizes : new FormArray([
-          new FormControl(null),
-          new FormControl(null),
-          new FormControl(null)
+          new FormControl(),
+          new FormControl(),
+          new FormControl()
         ])
       })
       
     }
 
     onSubmit(){
-        console.log(this.userDetails)
+        console.log(this.userDetails.value)
     }
   //    get firstName(){
   //    return this.userDetails.get('firstName')!
@@ -40,6 +44,9 @@ export class FormsComponent implements OnInit{
   }
   get departments(){
     return this.userDetails.get('departments')!
+  }
+  get allPrizes(){
+    return this.userDetails.get('prizes')! as FormArray
   }
    
 

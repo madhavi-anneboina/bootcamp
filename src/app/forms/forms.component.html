@@ -1,6 +1,7 @@
  <h5> Angular Reactive Forms</h5>
 <div class="container">
     <form [formGroup]="userDetails" (ngSubmit)="onSubmit()">
+        <div class="mb-3" formGroupName="fgFullName">
         <div class="mb-3">
             <label for="fname" class="form-label"> First Name:</label>
             <input  
@@ -27,16 +28,17 @@
                 formControlName="lastName"
               />
         </div>
-        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <!-- <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
             <div *ngIf="lastName.errors?.['required']">
                  Name Required
             </div>
             <div *ngIf="lastName.errors?.['minlength']">
              Minimum Length Required
         </div>
-       </div>
+       </div> -->
 
         <input type="submit" name="submit"/>
+    </div>
         
     </form>
 
