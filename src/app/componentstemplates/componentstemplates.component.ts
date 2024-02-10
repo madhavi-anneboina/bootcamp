@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 export class ComponentstemplatesComponent {
 
   name = "Madhavi"
+  divColor="black"
 
-
+  changeColor(){
+    this.divColor = "red"
+  }
   getName(){
     return this.name
   }
