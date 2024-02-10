@@ -9,12 +9,14 @@ export class ComponentstemplatesComponent {
 
   name = "Madhavi"
   divColor="black"
+  approved = false
 
   clors = ["yellow","pink","marron","white"]
 
 
   changeColor(){
     this.divColor = "blue"
+    this.approved = !this.approved
   }
   getName(){
     return this.name

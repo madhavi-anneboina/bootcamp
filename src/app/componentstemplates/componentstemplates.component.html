@@ -5,3 +5,12 @@
 <h2 (click)="changeColor()">{{divColor}}</h2>
 
 <li *ngFor="let col of clors">{{col}}</li>
+
+<div class="form-check">
+<input 
+type="checkbox"
+ class="checkbox-lg" 
+ [checked] ="approved"
+/>
+<div>{{approved}}</div>
+</div>
