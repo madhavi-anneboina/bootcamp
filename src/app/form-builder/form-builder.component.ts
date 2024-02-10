@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { FormControl,FormGroup,FormBuilder,Validators,AbstractControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-form-builder',
@@ -11,13 +12,16 @@ export class FormBuilderComponent {
   userDetails = this.fb.group({
     firstName:['',[Validators.required,Validators.minLength(8)]],
     lastName :['',[Validators.required,Validators.minLength(8)]],
-    email:[''],
+    email:['',[Validators.required,]],
     departments:['']
   })
-
+ 
 constructor(private fb:FormBuilder){
 
 }
+
+
+
 get firstName(){
   return this.userDetails?.get('firstName')!
 }
