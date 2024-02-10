@@ -21,5 +21,8 @@ export class ComponentstemplatesComponent {
   getName(){
     return this.name
   }
+  handleInput(){
+    console.log("data logged in")
+  }
 
 }
