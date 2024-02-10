@@ -22,6 +22,8 @@ type="checkbox"
 <input type="text" 
   class="formControl"
  maxlength="6"
-  (input)="handleInput()"
+  (input)="handleInput($event)"
  />
+
+{{eventInput}}
 

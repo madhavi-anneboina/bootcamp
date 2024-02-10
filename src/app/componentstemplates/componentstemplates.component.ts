@@ -12,6 +12,7 @@ export class ComponentstemplatesComponent {
   approved = false
 
   clors = ["yellow","pink","marron","white"]
+eventInput: any;
 
 
   changeColor(){
@@ -21,8 +22,8 @@ export class ComponentstemplatesComponent {
   getName(){
     return this.name
   }
-  handleInput(){
-    console.log("data logged in")
+  handleInput(e:Event){
+  this.eventInput =  (<HTMLInputElement>e.target).value
   }
 
 }
