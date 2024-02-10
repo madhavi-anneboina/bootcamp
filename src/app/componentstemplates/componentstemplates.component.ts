@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ComponentstemplatesComponent {
 
+  name = "Madhavi"
+
+
+  getName(){
+    return this.name
+  }
+
 }
