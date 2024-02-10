@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { ComponentstemplatesComponent } from './componentstemplates/componentstemplates.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     LoginComponent,
     AdminComponent,
     FormsComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    ComponentstemplatesComponent
   ],
   imports: [
     BrowserModule,
