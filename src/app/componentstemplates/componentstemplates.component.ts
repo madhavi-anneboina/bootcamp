@@ -10,8 +10,11 @@ export class ComponentstemplatesComponent {
   name = "Madhavi"
   divColor="black"
 
+  clors = ["yellow","pink","marron","white"]
+
+
   changeColor(){
-    this.divColor = "red"
+    this.divColor = "blue"
   }
   getName(){
     return this.name
