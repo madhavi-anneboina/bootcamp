@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class ComponentstemplatesComponent {
 
+  name = "Madhavi"
+  divColor="black"
+  approved = false
+
+  clors = ["yellow","pink","marron","white"]
+eventInput: any;
+
+
+  changeColor(){
+    this.divColor = "blue"
+    this.approved = !this.approved
+  }
+  getName(){
+    return this.name
+  }
+  handleInput(e:Event){
+  this.eventInput =  (<HTMLInputElement>e.target).value
+  }
+
 }
