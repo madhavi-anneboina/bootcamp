@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-firstchild',
@@ -9,4 +9,6 @@ export class FirstchildComponent {
   name = "coming from first child"
 
  @Input() MessageFromParent :string = ""
+ @Output() eventEmitter = new EventEmitter<string>()
+ messageFromChild : string = "Meesage getting from first child"
 }
