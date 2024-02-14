@@ -19,9 +19,17 @@ type="checkbox"
 
 <label> Test Data binding</label>
 
+
 <input type="text" 
   class="formControl"
- maxlength="6"
+  
+[(ngModel)] = "eventInput"
+ />
+ <br/>
+
+<input type="text" 
+  class="formControl"
+   
   (input)="handleInput($event)"
  />
 
