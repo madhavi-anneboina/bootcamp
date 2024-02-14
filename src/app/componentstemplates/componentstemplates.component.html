@@ -4,7 +4,10 @@
 
 <h2 (click)="changeColor()">{{divColor}}</h2>
 
-<li *ngFor="let col of clors">{{col}}</li>
+<li 
+*ngFor="let col of clors"
+[ngStyle]="{color: col.length > 4 ? 'red':'green'}"
+>{{col}}</li>
 
 <div class="form-check">
 <input 
