@@ -10,9 +10,11 @@ export class ComponentstemplatesComponent {
   name = "Madhavi"
   divColor="black"
   approved = false
+  MessageToChild :string ="Hello Iam conig from parent component"
 
   clors = ["yellow","pink","marron","white"]
 eventInput: any;
+userInput:string =  "Hello Madhavi"
 
 
   changeColor(){
