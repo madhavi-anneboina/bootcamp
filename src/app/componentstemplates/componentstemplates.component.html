@@ -36,6 +36,10 @@ type="checkbox"
  /> -->
   
 
-<app-firstchild [MessageFromParent]="MessageToChild"></app-firstchild>
+<app-firstchild 
+[MessageFromParent]="MessageToChild"
+(eventEmitter) = "MessageFromChildren($event)"
+></app-firstchild>
+
 
 <p *ngIf="approved">{{userInput}}</p>

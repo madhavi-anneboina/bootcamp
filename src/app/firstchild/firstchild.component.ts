@@ -11,4 +11,9 @@ export class FirstchildComponent {
  @Input() MessageFromParent :string = ""
  @Output() eventEmitter = new EventEmitter<string>()
  messageFromChild : string = "Meesage getting from first child"
+
+ generateChildMessage(){
+ this.eventEmitter.emit(this.messageFromChild)
+ }
 }
+

@@ -27,5 +27,7 @@ userInput:string =  "Hello Madhavi"
   handleInput(e:Event){
   this.eventInput =  (<HTMLInputElement>e.target).value
   }
-
+  MessageFromChildren(msg:string){
+    console.log("ok" + msg)
+  }
 }
