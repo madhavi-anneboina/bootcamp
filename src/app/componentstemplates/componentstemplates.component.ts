@@ -13,6 +13,7 @@ export class ComponentstemplatesComponent {
 
   clors = ["yellow","pink","marron","white"]
 eventInput: any;
+userInput:string =  "Hello Madhavi"
 
 
   changeColor(){

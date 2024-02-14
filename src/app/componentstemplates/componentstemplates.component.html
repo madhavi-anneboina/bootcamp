@@ -22,16 +22,16 @@ type="checkbox"
 
 <input type="text" 
   class="formControl"
-  
-[(ngModel)] = "eventInput"
+[(ngModel)] = "userInput"
  />
  <br/>
 
-<input type="text" 
+<!-- <input type="text" 
   class="formControl"
    
   (input)="handleInput($event)"
- />
+ /> -->
 
-{{eventInput}}
 
+
+<p *ngIf="approved">{{userInput}}</p>
