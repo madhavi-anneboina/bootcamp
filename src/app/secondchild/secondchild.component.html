@@ -5,3 +5,13 @@
 <ng-template #pending>
   second child is pending
 </ng-template>
+
+<div>
+    <label for="approval"> Approved
+      <input  type="checkbox"
+       value="approved" 
+       #cbapproved
+       (click)="getApproval(cbapproved)"
+       />
+    </label>
+</div>
