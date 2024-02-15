@@ -36,7 +36,7 @@ type="checkbox"
  /> -->
   
 
-<app-firstchild 
+<app-firstchild class="firstChild"
 [MessageFromParent]="MessageToChild"
 (eventEmitter) = "MessageFromChildren($event)"
 ></app-firstchild>
@@ -45,4 +45,6 @@ type="checkbox"
 <p *ngIf="approved">{{userInput}}</p>
 
 
-<app-secondchild></app-secondchild>
+<app-secondchild class="secondchild">
+
+</app-secondchild>
