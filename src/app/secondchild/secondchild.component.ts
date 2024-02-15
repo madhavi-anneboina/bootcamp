@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./secondchild.component.css']
 })
 export class SecondchildComponent {
+  Approved :Boolean = false
 
 }
