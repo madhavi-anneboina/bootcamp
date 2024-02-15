@@ -8,6 +8,10 @@
 
 <div>
     <label for="approval"> Approved
-      <input  type="checkbox" value="approved" #cbapproved/>
+      <input  type="checkbox"
+       value="approved" 
+       #cbapproved
+       (click)="getApproval(cbapproved)"
+       />
     </label>
 </div>

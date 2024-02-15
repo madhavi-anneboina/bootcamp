@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class SecondchildComponent {
   Approved :Boolean = false
 
+  getApproval(cb:HTMLInputElement){
+  console.log(cb.checked)
+
+  }
+
 }
