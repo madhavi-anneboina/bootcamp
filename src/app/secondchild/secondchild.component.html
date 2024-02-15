@@ -1,1 +1,7 @@
 <p>secondchild works!</p>
+
+<p *ngIf="Approved;else pending">Second Child data approved</p>
+
+<ng-template #pending>
+  second child is pending
+</ng-template>
