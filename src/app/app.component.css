@@ -1,0 +1,14 @@
+.firstChild{
+    border-radius: 2px;
+    border : 2px solid green;
+    background-color: yellowgreen;
+    display:block;
+    padding:6px 4px;
+}
+.secondChild{
+    border-radius: 2px;
+    border : 2px solid blueviolet;
+    background-color: rgb(116, 130, 89);
+    display:block;
+    padding:6px 4px;
+}
