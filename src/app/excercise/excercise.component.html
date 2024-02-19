@@ -16,3 +16,27 @@
   
   <button (click)="toggleClass()">Toggle Class</button>
   <button (click)="toggleStyle()">Toggle Style</button>
+
+   /*Using Inter polation */
+
+  <h2>{{heading}}</h2>
+
+  <p>Name :{{peep.gender === "m" ? "Mr" : "Ms"}}</p>
+           {{peep.fullname.firstName + " " + peep.fullname.lastName}}
+<!-- 
+/* Property binding */ -->
+<br/>
+
+{{person.Name}}
+
+<button (click)="person == boy" [disabled]="person.gender == 'm'">
+    Boy
+</button>
+<button (click)="person == girl" [disabled]="person.gender == 'f'">
+   girl
+</button>
+
+<br/>
+
+
+ <p>  helloo :  {{name}}</p>
