@@ -8,7 +8,9 @@ import { Component, EventEmitter, Input,Output} from '@angular/core';
 export class ExcerciseComponent {
 
   Title = "Excercise"
-
+  displayText: string = "Hello, Angular!";
+  addRemoveClass: boolean = false;
+  addRemoveStyle: boolean = false;
   count = 1
   @Input() size! : number |string
   @Output() sizeChange =  new EventEmitter <number>()
@@ -32,6 +34,16 @@ export class ExcerciseComponent {
   }
   getDec(){
     this.count--
+  }
+
+
+
+  toggleClass() {
+    this.addRemoveClass = !this.addRemoveClass;
+  }
+
+  toggleStyle() {
+    this.addRemoveStyle = !this.addRemoveStyle;
   }
 
 
