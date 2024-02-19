@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input,Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { FirstchildComponent } from '../firstchild/firstchild.component';
 
 @Component({
   selector: 'app-excercise',
@@ -7,12 +8,16 @@ import { Component, EventEmitter, Input,Output} from '@angular/core';
 })
 export class ExcerciseComponent {
 
+  @Input()
+  name!: string;
+
   Title = "Excercise"
   displayText: string = "Hello, Angular!";
   addRemoveClass: boolean = false;
   addRemoveStyle: boolean = false;
   count = 1
   heading = "This is a peep"
+  
   peep = {
     fullname:{
       firstName :"mad",
