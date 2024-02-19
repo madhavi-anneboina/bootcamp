@@ -8,3 +8,11 @@
   <h4>{{Title}}</h4>
   <button (click)="Inc()" title="smaller">-</button>
   <button (click)="dec()" title="bigger">+</button>
+
+
+  <div [class.highlight]="addRemoveClass" [style.color]="addRemoveStyle ? 'blue' : 'black'">
+    {{ displayText }}
+  </div>
+  
+  <button (click)="toggleClass()">Toggle Class</button>
+  <button (click)="toggleStyle()">Toggle Style</button>
