@@ -16,3 +16,10 @@
   
   <button (click)="toggleClass()">Toggle Class</button>
   <button (click)="toggleStyle()">Toggle Style</button>
+
+   /*Using Inter polation */
+
+  <h2>{{heading}}</h2>
+
+  <p>Name :{{peep.gender === "m" ? "Mr" : "Ms"}}</p>
+           {{peep.fullname.firstName + " " + peep.fullname.lastName}}

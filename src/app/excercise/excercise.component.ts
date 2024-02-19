@@ -12,6 +12,14 @@ export class ExcerciseComponent {
   addRemoveClass: boolean = false;
   addRemoveStyle: boolean = false;
   count = 1
+  heading = "This is a peep"
+  peep = {
+    fullname:{
+      firstName :"mad",
+      lastName :"anne"
+    },
+    gender:'female'
+  }
   @Input() size! : number |string
   @Output() sizeChange =  new EventEmitter <number>()
 
@@ -35,9 +43,6 @@ export class ExcerciseComponent {
   getDec(){
     this.count--
   }
-
-
-
   toggleClass() {
     this.addRemoveClass = !this.addRemoveClass;
   }
