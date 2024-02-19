@@ -15,6 +15,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ComponentstemplatesComponent } from './componentstemplates/componentstemplates.component';
 import { FirstchildComponent } from './firstchild/firstchild.component';
 import { SecondchildComponent } from './secondchild/secondchild.component';
+import { ExcerciseComponent } from './excercise/excercise.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SecondchildComponent } from './secondchild/secondchild.component';
     FormBuilderComponent,
     ComponentstemplatesComponent,
     FirstchildComponent,
-    SecondchildComponent
+    SecondchildComponent,
+    ExcerciseComponent
   ],
   imports: [
     BrowserModule,
