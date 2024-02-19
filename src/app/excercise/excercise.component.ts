@@ -20,6 +20,19 @@ export class ExcerciseComponent {
     },
     gender:'female'
   }
+
+  boy = {
+    Name :"Pranneth",
+    gender:"m",
+    photo:""
+  }
+  girl = {
+    Name :"rani",
+    gender:'f',
+    photo:"images/girl.jpg"
+
+  }
+   person = this.boy
   @Input() size! : number |string
   @Output() sizeChange =  new EventEmitter <number>()
 

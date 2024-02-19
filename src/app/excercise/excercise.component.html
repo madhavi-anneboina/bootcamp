@@ -23,3 +23,15 @@
 
   <p>Name :{{peep.gender === "m" ? "Mr" : "Ms"}}</p>
            {{peep.fullname.firstName + " " + peep.fullname.lastName}}
+<!-- 
+/* Property binding */ -->
+
+
+{{person.Name}}
+
+<button (click)="person == boy" [disabled]="person.gender == 'm'">
+    Boy
+</button>
+<button (click)="person == girl" [disabled]="person.gender == 'f'">
+   girl
+</button>
