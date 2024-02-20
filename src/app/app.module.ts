@@ -16,6 +16,7 @@ import { ComponentstemplatesComponent } from './componentstemplates/componentste
 import { FirstchildComponent } from './firstchild/firstchild.component';
 import { SecondchildComponent } from './secondchild/secondchild.component';
 import { ExcerciseComponent } from './excercise/excercise.component';
+import { FirstChildChildComponent } from './first-child-child/first-child-child.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ExcerciseComponent } from './excercise/excercise.component';
     ComponentstemplatesComponent,
     FirstchildComponent,
     SecondchildComponent,
-    ExcerciseComponent
+    ExcerciseComponent,
+    FirstChildChildComponent
   ],
   imports: [
     BrowserModule,

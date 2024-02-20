@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SecondchildComponent } from '../secondchild/secondchild.component';
 
 @Component({
   selector: 'app-componentstemplates',
@@ -11,10 +12,10 @@ export class ComponentstemplatesComponent {
   divColor="black"
   approved = false
   MessageToChild :string ="Hello Iam conig from parent component"
-
-  clors = ["yellow","pink","marron","white"]
-eventInput: any;
-userInput:string =  "Hello Madhavi"
+  @ViewChild(SecondchildComponent) secondChild! : SecondchildComponent;
+   clors = ["yellow","pink","marron","white"]
+    eventInput: any;
+    userInput:string =  "Hello Madhavi"
 
 
   changeColor(){
@@ -29,5 +30,8 @@ userInput:string =  "Hello Madhavi"
   }
   MessageFromChildren(msg:string){
     console.log("ok" + msg)
+  }
+  ngAfterViewInit(){
+    this.secondChild.calledFromParent()
   }
 }
