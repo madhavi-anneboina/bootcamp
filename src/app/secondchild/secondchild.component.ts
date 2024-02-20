@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SecondchildComponent {
   Approved :Boolean = false
+  fName : string = ""
 
   getApproval(cb:HTMLInputElement){
-  console.log(cb.checked)
+  // console.log(cb.checked)
+  this.fName = cb.value
+  console.log(this.fName)
 
   }
 
