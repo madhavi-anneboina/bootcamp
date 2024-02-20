@@ -4,6 +4,9 @@
 
 <button (click)="generateChildMessage()">Send message to parent</button>
 
+<app-first-child-child class="grandChild">
+    <p> Hello im coming through ng content</p>
+</app-first-child-child>
 
 <app-excercise [address]="event.location"></app-excercise>
 
