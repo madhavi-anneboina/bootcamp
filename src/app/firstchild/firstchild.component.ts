@@ -6,7 +6,8 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./firstchild.component.css']
 })
 export class FirstchildComponent {
-  name = "coming from first child"
+  name  = "coming from first child"
+  event = {name:'ngConf 2025', date: '3/1/2025', time: '8am', location: {address: '123 Main St', city: 'Salt Lake City, UT', country: 'USA'}}
 
  @Input() MessageFromParent :string = ""
  @Output() eventEmitter = new EventEmitter<string>()

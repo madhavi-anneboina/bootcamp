@@ -11,6 +11,8 @@ export class ExcerciseComponent {
   @Input()
   name!: string;
 
+  @Input() address!: { address: string, city: string, country: string };
+
   Title = "Excercise"
   displayText: string = "Hello, Angular!";
   addRemoveClass: boolean = false;
