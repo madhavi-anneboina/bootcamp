@@ -17,6 +17,7 @@ import { FirstchildComponent } from './firstchild/firstchild.component';
 import { SecondchildComponent } from './secondchild/secondchild.component';
 import { ExcerciseComponent } from './excercise/excercise.component';
 import { FirstChildChildComponent } from './first-child-child/first-child-child.component';
+import { BoldandblueDirective } from './boldandblue.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FirstChildChildComponent } from './first-child-child/first-child-child.
     FirstchildComponent,
     SecondchildComponent,
     ExcerciseComponent,
-    FirstChildChildComponent
+    FirstChildChildComponent,
+    BoldandblueDirective
   ],
   imports: [
     BrowserModule,
