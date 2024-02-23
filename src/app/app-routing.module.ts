@@ -8,6 +8,7 @@ import { FormsComponent } from './forms/forms.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ComponentstemplatesComponent } from './componentstemplates/componentstemplates.component';
 import { ExcerciseComponent } from './excercise/excercise.component';
+import { ExampleComponent } from './example/example.component';
 
 const routes: Routes = [
   
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path :'forms', component:FormsComponent, pathMatch:"full"},
   {path :'form', component:FormBuilderComponent, pathMatch:"full"},
   {path :'components', component:ComponentstemplatesComponent, pathMatch:"full"},
-  {path :'excercise', component:ExcerciseComponent, pathMatch:"full"}
+  {path :'excercise', component:ExcerciseComponent, pathMatch:"full"},
+  {path :'example', component:ExampleComponent, pathMatch:"full"}
 
 ];
 
