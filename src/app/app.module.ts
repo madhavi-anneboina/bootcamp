@@ -19,6 +19,7 @@ import { ExcerciseComponent } from './excercise/excercise.component';
 import { FirstChildChildComponent } from './first-child-child/first-child-child.component';
 import { BoldandblueDirective } from './boldandblue.directive';
 import { ExampleComponent } from './example/example.component';
+import { MyFormComponent } from './my-form/my-form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ExampleComponent } from './example/example.component';
     ExcerciseComponent,
     FirstChildChildComponent,
     BoldandblueDirective,
-    ExampleComponent
+    ExampleComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
