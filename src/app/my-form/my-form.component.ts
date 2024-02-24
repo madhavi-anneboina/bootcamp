@@ -41,4 +41,11 @@ export class MyFormComponent implements OnInit {
   get confirmPassword(){
     return this.myForm?.get('confirmPassword')
   }
+  setDefaultValues() {
+    this.myForm.setValue({
+      username: 'defaultUsername',
+      password: 'defaultPassword',
+      confirmPassword: 'defaultPassword'
+    });
+  }
 }
