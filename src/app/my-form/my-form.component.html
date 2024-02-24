@@ -3,11 +3,11 @@
       <label for="username">Username:</label>
       <input type="text" id="username" formControlName="username">
     </div>
-    <div *ngIf="username.invalid && (username.dirty || username.touched)">
-        <div *ngIf="username.errors?.['required']">
+    <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+        <div *ngIf="username?.errors?.['required']">
              Name Required
         </div>
-        <div *ngIf="username.errors?.['minlength']">
+        <div *ngIf="username?.errors?.['minlength']">
          Minimum Length Required
     </div>
 </div>
@@ -16,13 +16,25 @@
       <label for="password">Password:</label>
       <input type="password" id="password" formControlName="password">
     </div>
-  
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+      <div *ngIf="password?.errors?.['required']">
+           Password Required
+      </div>
+      <div *ngIf="password?.errors?.['minlength']">
+      Min length Required
+  </div>
+</div>
     <div>
       <label for="confirmPassword">Confirm Password:</label>
       <input type="password" id="confirmPassword" formControlName="confirmPassword">
     </div>
   
-    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button> <br/>
+
+    {{myForm.value.username}} <br/>
+    {{myForm.value.password}} <br/>
+    {{myForm.value.confirmPassword}} <br/>
+
 
 </form>
   
