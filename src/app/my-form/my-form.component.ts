@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators ,AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'app-my-form',
@@ -14,8 +14,9 @@ export class MyFormComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      username:new FormControl(null,[Validators.required,Validators.minLength(8)]),
-      password: new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]),
+      username:new FormControl(null,[Validators.required,Validators.minLength(4)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      // password: new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]),
       confirmPassword: new FormControl(null,[ Validators.required])
     }, {
       validators: this.passwordMatchValidator
@@ -28,9 +29,8 @@ export class MyFormComponent implements OnInit {
 
   onSubmit() {
     // Handle form submission here
-    if (this.myForm && this.myForm.valid) {
-      console.log('Form submitted successfully!');
-    }
+    console.log(this.myForm.value)
+  
   }
   get username(){
     return this.myForm?.get('username')
@@ -38,7 +38,7 @@ export class MyFormComponent implements OnInit {
   get password(){
     return this.myForm?.get('password')
   }
-  get confirmpassword(){
-    return this.myForm?.get('confirmpassword')
+  get confirmPassword(){
+    return this.myForm?.get('confirmPassword')
   }
 }
