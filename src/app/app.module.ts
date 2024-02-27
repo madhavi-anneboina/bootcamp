@@ -20,6 +20,7 @@ import { FirstChildChildComponent } from './first-child-child/first-child-child.
 import { BoldandblueDirective } from './boldandblue.directive';
 import { ExampleComponent } from './example/example.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MyFormComponent } from './my-form/my-form.component';
     FirstChildChildComponent,
     BoldandblueDirective,
     ExampleComponent,
-    MyFormComponent
+    MyFormComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
