@@ -1,1 +1,15 @@
-<p>dropdown works!</p>
+<div>
+    <label for="nameDropdown">Select a Name:</label>
+    <select id="nameDropdown" [(ngModel)]="selectedName">
+      <option *ngFor="let name of names" [value]="name" [disabled]="name === 'Vani'">{{ name }}</option>
+    </select>
+  </div>
+  
+  <div *ngIf="selectedName === 'Madhavi'">
+    <label for="apartmentInput">Apartment Name:</label>
+    <input type="text" id="apartmentInput" [value]="findAddress(selectedName).apartment" />
+
+  
+    <label for="zipcodeInput">Zipcode:</label>
+    <input type="text" id="zipcodeInput" [value]="findAddress(selectedName).zipcode" />
+  </div>

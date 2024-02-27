@@ -33,6 +33,7 @@ export class MyFormComponent implements OnInit {
   
   }
   get username(){
+    console.log("Added")
     return this.myForm?.get('username')
   }
   get password(){
@@ -41,13 +42,7 @@ export class MyFormComponent implements OnInit {
   get confirmPassword(){
     return this.myForm?.get('confirmPassword')
   }
-  setDefaultValues() {
-    this.myForm.setValue({
-      username: 'defaultUsername',
-      password: 'defaultPassword',
-      confirmPassword: 'defaultPassword'
-    });
-  }
+
 
 
 }

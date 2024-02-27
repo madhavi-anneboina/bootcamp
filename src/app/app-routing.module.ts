@@ -10,6 +10,7 @@ import { ComponentstemplatesComponent } from './componentstemplates/componentste
 import { ExcerciseComponent } from './excercise/excercise.component';
 import { ExampleComponent } from './example/example.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const routes: Routes = [
   
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path :'components', component:ComponentstemplatesComponent, pathMatch:"full"},
   {path :'excercise', component:ExcerciseComponent, pathMatch:"full"},
   {path :'example', component:ExampleComponent, pathMatch:"full"},
-  {path :'myform', component:MyFormComponent, pathMatch:"full"}
+  {path :'myform', component:MyFormComponent, pathMatch:"full"},
+  {path :'dropdown', component:DropdownComponent, pathMatch:"full"}
 
 ];
 
