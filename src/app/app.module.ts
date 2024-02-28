@@ -21,6 +21,7 @@ import { BoldandblueDirective } from './boldandblue.directive';
 import { ExampleComponent } from './example/example.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { RadionButtonComponent } from './radion-button/radion-button.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     BoldandblueDirective,
     ExampleComponent,
     MyFormComponent,
-    DropdownComponent
+    DropdownComponent,
+    RadionButtonComponent
   ],
   imports: [
     BrowserModule,
