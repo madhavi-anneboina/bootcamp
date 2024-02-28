@@ -6,5 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
+
+
+  getEmployee() {
+    return this.http.get('./assets/data/db.json');
+  }
 }
