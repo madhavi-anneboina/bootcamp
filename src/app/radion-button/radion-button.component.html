@@ -1,0 +1,29 @@
+<form [formGroup]="genderForm">
+    <label>
+      <input type="radio" formControlName="gender" value="Male" (change)="toggleInputs()"> Male
+    </label>
+    
+    <label>
+      <input type="radio" formControlName="gender" value="Female" (change)="toggleInputs()"> Female
+    </label>
+  
+    <div>
+      <label for="maleInput">Male Input:</label>
+      <input type="text" id="maleInput" formControlName="maleInput">
+    </div>
+     <div *ngIf="genderForm.get('gender')?.value === 'Male' && (genderForm.get('maleInput')?.invalid && (genderForm.get('maleInput')?.dirty || genderForm.get('maleInput')?.touched))">
+        <div *ngIf="genderForm.get('maleInput')?.errors?.['required']" class="error" style="color: red;">
+         Male Input Required
+        </div>
+      </div>
+    <div>
+      <label for="femaleInput">Female Input:</label>
+      <input type="text" id="femaleInput" formControlName="femaleInput">
+    </div>
+    <div *ngIf="genderForm.get('gender')?.value === 'Female' && (genderForm.get('femaleInput')?.invalid && (genderForm.get('femaleInput')?.dirty || genderForm.get('femaleInput')?.touched))">
+        <div *ngIf="genderForm.get('femaleInput')?.errors?.['required']" class="error" style="color: red;">
+         Female Input Required
+        </div>
+      </div>
+  </form>
+  
