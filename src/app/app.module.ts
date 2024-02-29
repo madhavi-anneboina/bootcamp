@@ -22,6 +22,7 @@ import { ExampleComponent } from './example/example.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { RadionButtonComponent } from './radion-button/radion-button.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RadionButtonComponent } from './radion-button/radion-button.component';
     ExampleComponent,
     MyFormComponent,
     DropdownComponent,
-    RadionButtonComponent
+    RadionButtonComponent,
+    FormArrayComponent
   ],
   imports: [
     BrowserModule,

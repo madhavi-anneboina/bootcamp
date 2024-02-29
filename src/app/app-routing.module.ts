@@ -12,6 +12,7 @@ import { ExampleComponent } from './example/example.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { RadionButtonComponent } from './radion-button/radion-button.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,8 @@ const routes: Routes = [
   {path :'myform', component:MyFormComponent, pathMatch:"full"},
   {path :'dropdown', component:DropdownComponent, pathMatch:"full"},
   {path :'radio', component:RadionButtonComponent, pathMatch:"full"},
+  {path :'formarray', component:FormArrayComponent, pathMatch:"full"},
+  
 
 
 ];

@@ -1,0 +1,12 @@
+<form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <label for="item">Add Item:</label>
+    <input type="text" id="item" formControlName="itemName" />
+    <button type="submit">Add</button>
+  </form>
+  
+  <ul>
+    <li *ngFor="let item of itemArray.controls; let i = index">
+      {{ item.value }}
+      <button (click)="removeItem(i)">Remove</button>
+    </li>
+  </ul>
