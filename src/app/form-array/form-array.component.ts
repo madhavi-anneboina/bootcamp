@@ -31,12 +31,10 @@ export class FormArrayComponent {
     }
   }
   removeItem(index: number) {
-
     if (index > 0) {
       this.itemArray.removeAt(index);
     }
   }
   
-
 
 }
