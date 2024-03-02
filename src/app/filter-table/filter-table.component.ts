@@ -38,5 +38,11 @@ export class FilterTableComponent {
     );
   }
 
+  // filterData() {
+  //   this.filteredData = this.data.filter((item) =>
+  //     JSON.stringify(item).toLowerCase().includes(this.searchText.toLowerCase())
+  //   );
+  // }
+
 
 }
