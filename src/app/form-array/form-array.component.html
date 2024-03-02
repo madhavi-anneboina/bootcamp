@@ -6,7 +6,10 @@
   
   <ul>
     <li *ngFor="let item of itemArray.controls; let i = index">
-      {{ item.value }}
+      <input [value]="item.value" [readonly]="i === editIndex" />
+      <button *ngIf="i !== editIndex" (click)="editItem(i)">Edit</button>
+      <button *ngIf="i === editIndex" (click)="updateItem(i)">Update</button>
       <button (click)="removeItem(i)">Remove</button>
+     
     </li>
   </ul>

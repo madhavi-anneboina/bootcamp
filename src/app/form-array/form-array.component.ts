@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 export class FormArrayComponent {
 
   itemForm: FormGroup;
-
+  editIndex: number | null = null;
   constructor(private fb: FormBuilder) {
     this.itemForm = this.fb.group({
       itemName: ['', Validators.required],
@@ -28,6 +28,25 @@ export class FormArrayComponent {
       const newItem = itemNameControl.value;
       this.itemArray.push(this.fb.control(newItem));
       itemNameControl.reset();
+    }
+  }
+
+  editItem(index: number) {
+    const currentItem = this.itemArray.at(index);
+
+    if (currentItem) {
+      this.editIndex = index;
+      this.itemForm.get('itemName')?.setValue(currentItem.value);
+    }
+  }
+  updateItem(index: number) {
+    const itemNameControl = this.itemForm.get('itemName');
+    const currentItem = this.itemArray.at(index);
+
+    if (itemNameControl && currentItem) {
+      currentItem.setValue(itemNameControl.value);
+      itemNameControl.reset();
+      this.editIndex = null;
     }
   }
   removeItem(index: number) {
