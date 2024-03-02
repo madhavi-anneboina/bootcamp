@@ -1,1 +1,21 @@
-<p>filter-table works!</p>
+<div>
+    <input type="text" [(ngModel)]="searchText" (input)="filterData()"/><br/><br/>
+    <table border="1" class="table table-centered table-nowrap">
+        <thead class="table-light">
+          <tr>
+            <th class="align-middle">Image</th>
+            <th class="align-middle">Name</th>
+            <th class="align-middle">Age</th>
+            <th class="align-middle">Occupation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredData">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}%</td>
+            <td>{{item.occupation}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
