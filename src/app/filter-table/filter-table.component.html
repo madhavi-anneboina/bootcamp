@@ -1,5 +1,5 @@
 <div>
-    <input type="text" [(ngModel)]="searchText" (input)="filterData()"/><br/><br/>
+    <input type="text" [formControl]="searchData"/><br/><br/>
     <table border="1" class="table table-centered table-nowrap">
         <thead class="table-light">
           <tr>
@@ -13,8 +13,8 @@
           <tr *ngFor="let item of filteredData">
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
-            <td>{{item.age}}%</td>
-            <td>{{item.occupation}}</td>
+            <td>{{item.email}}%</td>
+            <td>{{item.body}}</td>
           </tr>
         </tbody>
       </table>

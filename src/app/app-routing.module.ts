@@ -14,6 +14,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { RadionButtonComponent } from './radion-button/radion-button.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { FilterTableComponent } from './filter-table/filter-table.component';
+import { ListComponent } from './list/list.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path :'radio', component:RadionButtonComponent, pathMatch:"full"},
   {path :'formarray', component:FormArrayComponent, pathMatch:"full"},
   {path :'filter', component:FilterTableComponent, pathMatch:"full"},
+  {path :'list', component:ListComponent, pathMatch:"full"},
   
 
 
