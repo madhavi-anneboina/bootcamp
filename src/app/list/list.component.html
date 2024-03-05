@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <input type="text" #myInput formControlName="input" />
+  </form>
+  
+  <button (click)="addList()">{{ editIndex !== null ? 'Update' : 'Add' }}</button>
+  <ul>
+    <li *ngFor="let l of list; let i = index">
+      {{ l }}<button (click)="onRemove(i)">Remove</button
+      ><button (click)="onEdit(i)">edit</button>
+    </li>
+  </ul>
