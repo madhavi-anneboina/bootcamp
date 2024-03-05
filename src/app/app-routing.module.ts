@@ -15,6 +15,7 @@ import { RadionButtonComponent } from './radion-button/radion-button.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { FilterTableComponent } from './filter-table/filter-table.component';
 import { ListComponent } from './list/list.component';
+import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path :'formarray', component:FormArrayComponent, pathMatch:"full"},
   {path :'filter', component:FilterTableComponent, pathMatch:"full"},
   {path :'list', component:ListComponent, pathMatch:"full"},
+  {path :'expandpanel', component:ExpandpanelComponent, pathMatch:"full"}
   
 
 
