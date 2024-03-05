@@ -25,6 +25,7 @@ import { RadionButtonComponent } from './radion-button/radion-button.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { FilterTableComponent } from './filter-table/filter-table.component';
 import { ListComponent } from './list/list.component';
+import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ListComponent } from './list/list.component';
     RadionButtonComponent,
     FormArrayComponent,
     FilterTableComponent,
-    ListComponent
+    ListComponent,
+    ExpandpanelComponent
   ],
   imports: [
     BrowserModule,
