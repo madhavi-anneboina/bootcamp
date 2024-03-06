@@ -3,8 +3,20 @@
    [data]="item" 
    (toggleDescription)="toggleDescription(i)"
    (notifyParent)="receiveNotification($event)"
+   (sendData)="receiveData($event)"
    >
   </app-expanditem>
+  <div *ngIf="receivedData">
+    <p>Data from child:</p>
+    <ul>
+      <li>Title: {{ receivedData.title }}</li>
+      <li>Description: {{ receivedData.description }}</li>
+    </ul>
+  </div>
+  {{messageFromChild}}
 </div>
-{{messageFromChild}}
+
+
+
+
 

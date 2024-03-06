@@ -10,6 +10,7 @@ export class ExpanditemComponent {
   @Input() data:any
   @Output() toggleDescription = new EventEmitter<void>();
   @Output() notifyParent : EventEmitter<string> = new EventEmitter<string>();
+  @Output() sendData: EventEmitter<any> = new EventEmitter<any>();
 
   // onToggleDescription(): void {
   //   this.toggleDescription.emit();
@@ -19,6 +20,14 @@ export class ExpanditemComponent {
   // Child to parent Communication 
   sendNotification(): void {
     this.notifyParent.emit(this.childMessage);
+  }
+
+  sendDataToParent (){
+    const dataToSend = {
+      title: 'Angular Data',
+      description: 'Data sent from the child to the parent.',
+    };
+    this.sendData.emit(dataToSend);
   }
 
 }
