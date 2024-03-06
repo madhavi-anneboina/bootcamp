@@ -26,6 +26,7 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { FilterTableComponent } from './filter-table/filter-table.component';
 import { ListComponent } from './list/list.component';
 import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
+import { ExpanditemComponent } from './expanditem/expanditem.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
     FormArrayComponent,
     FilterTableComponent,
     ListComponent,
-    ExpandpanelComponent
+    ExpandpanelComponent,
+    ExpanditemComponent
   ],
   imports: [
     BrowserModule,
