@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./expandpanel.component.css'],
 })
 export class ExpandpanelComponent {
+  messageFromChild :string =""
   items = [
     {
       title: 'Title 1',
@@ -38,5 +39,9 @@ export class ExpandpanelComponent {
         item.isExpanded = false;
       }
     });
+  }
+
+  receiveNotification(messgae :string){
+   this.messageFromChild = messgae
   }
 }
