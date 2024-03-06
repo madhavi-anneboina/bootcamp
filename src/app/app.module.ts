@@ -27,6 +27,7 @@ import { FilterTableComponent } from './filter-table/filter-table.component';
 import { ListComponent } from './list/list.component';
 import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
 import { ExpanditemComponent } from './expanditem/expanditem.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ExpanditemComponent } from './expanditem/expanditem.component';
     FilterTableComponent,
     ListComponent,
     ExpandpanelComponent,
-    ExpanditemComponent
+    ExpanditemComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
