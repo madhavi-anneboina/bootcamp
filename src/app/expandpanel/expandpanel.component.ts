@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ExpandpanelComponent {
   messageFromChild :string =""
+  receivedData:any 
+
+ 
   items = [
     {
       title: 'Title 1',
@@ -43,5 +46,9 @@ export class ExpandpanelComponent {
 
   receiveNotification(messgae :string){
    this.messageFromChild = messgae
+  }
+
+  receiveData(data: any): void {
+    this.receivedData = data;
   }
 }
