@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { ViewitemComponent } from '../viewitem/viewitem.component';
 
-interface Data {
-  title: string;
-  inputValue: string;
-  description: string;
-  isExpanded: boolean;
-}
 
 @Component({
-  selector: 'app-expandpanel',
-  templateUrl: './expandpanel.component.html',
-  styleUrls: ['./expandpanel.component.css'],
+  selector: 'app-viewpanel',
+  templateUrl: './viewpanel.component.html',
+  styleUrls: ['./viewpanel.component.css']
 })
-export class ExpandpanelComponent {
-  messageFromChild: string = '';
-  receivedData: Data | null = null;
+export class ViewpanelComponent {
+  @ViewChildren(ViewitemComponent)
+  expandItems!: QueryList<ViewitemComponent>;
 
-  items: Data[] = [
+
+  items =  [
     {
       title: 'Title 1',
       inputValue: 'Title 1',
@@ -39,22 +35,24 @@ export class ExpandpanelComponent {
       isExpanded: false,
     },
   ];
-
+ 
+  // toggleDescription(index: number): void {
+  //   this.expandItems.toArray().forEach((item, i) => {
+  //     if (i === index) {
+  //       item.toggleDescription();
+  //     } else {
+  //       item.collapseDescription();
+  //     }
+  //   });
+  // }
   toggleDescription(index: number): void {
-    this.items.forEach((item, i) => {
+    this.expandItems.toArray().forEach((item, i) => {
       if (i === index) {
-        item.isExpanded = !item.isExpanded;
+        item.toggleDescription();
       } else {
-        item.isExpanded = false;
+        item.collapseDescription();
       }
     });
   }
 
-  receiveNotification(messgae: string) {
-    this.messageFromChild = messgae;
-  }
-
-  receiveData(data: Data): void {
-    this.receivedData = data;
-  }
 }

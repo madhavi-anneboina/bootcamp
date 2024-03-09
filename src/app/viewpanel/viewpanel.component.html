@@ -1,0 +1,3 @@
+<div *ngFor="let item of items; let i = index">
+  <app-viewitem [data]="item" (click)="toggleDescription(i)"></app-viewitem>
+</div>

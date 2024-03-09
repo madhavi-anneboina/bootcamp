@@ -17,6 +17,7 @@ import { FilterTableComponent } from './filter-table/filter-table.component';
 import { ListComponent } from './list/list.component';
 import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
 import { UserComponent } from './user/user.component';
+import { ViewpanelComponent } from './viewpanel/viewpanel.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path :'filter', component:FilterTableComponent, pathMatch:"full"},
   {path :'list', component:ListComponent, pathMatch:"full"},
   {path :'expandpanel', component:ExpandpanelComponent, pathMatch:"full"},
-  {path :'users/:id', component:UserComponent, pathMatch:"full"}
+  {path :'users/:id', component:UserComponent, pathMatch:"full"},
+  {path :'viewpanel', component:ViewpanelComponent, pathMatch:"full"}
   
 
 

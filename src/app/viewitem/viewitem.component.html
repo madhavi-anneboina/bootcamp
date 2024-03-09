@@ -1,0 +1,14 @@
+
+  <div (click)="toggleDescription()">
+    <input type="text" [(ngModel)]="data.title" placeholder="Type here">
+    <span class="arrow-icon" (click)="toggleDescription()">➤</span>
+  </div>
+  
+  <div *ngIf="isExpanded">
+    <div class="card">
+      <div class="card_title">
+        <p>{{ data.title }}</p>
+      </div>
+      <p>{{ data.description }}</p>
+    </div>
+  </div>

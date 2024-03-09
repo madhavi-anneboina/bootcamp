@@ -28,6 +28,8 @@ import { ListComponent } from './list/list.component';
 import { ExpandpanelComponent } from './expandpanel/expandpanel.component';
 import { ExpanditemComponent } from './expanditem/expanditem.component';
 import { UserComponent } from './user/user.component';
+import { ViewpanelComponent } from './viewpanel/viewpanel.component';
+import { ViewitemComponent } from './viewitem/viewitem.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { UserComponent } from './user/user.component';
     ListComponent,
     ExpandpanelComponent,
     ExpanditemComponent,
-    UserComponent
+    UserComponent,
+    ViewpanelComponent,
+    ViewitemComponent
   ],
   imports: [
     BrowserModule,
