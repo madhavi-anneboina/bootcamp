@@ -1,7 +1,7 @@
 
-  <div (click)="toggleDescription()">
+  <div (click)="clickTitle()">
     <input type="text" [(ngModel)]="data.title" placeholder="Type here">
-    <span class="arrow-icon" (click)="toggleDescription()">➤</span>
+    <span class="arrow-icon">➤</span>
   </div>
   
   <div *ngIf="isExpanded">
