@@ -30,6 +30,8 @@ import { ExpanditemComponent } from './expanditem/expanditem.component';
 import { UserComponent } from './user/user.component';
 import { ViewpanelComponent } from './viewpanel/viewpanel.component';
 import { ViewitemComponent } from './viewitem/viewitem.component';
+import { NewloginComponent } from './newlogin/newlogin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ViewitemComponent } from './viewitem/viewitem.component';
     ExpanditemComponent,
     UserComponent,
     ViewpanelComponent,
-    ViewitemComponent
+    ViewitemComponent,
+    NewloginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
