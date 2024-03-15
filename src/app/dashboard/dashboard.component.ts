@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +10,13 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
   currentUser: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private profileService: ProfileService) {}
 
   ngOnInit() {
-    const currentUserString = localStorage.getItem('currentUser');
+    const currentUserString = this.profileService.userInfo;//localStorage.getItem('currentUser');
     if (currentUserString) {
-      this.currentUser = JSON.parse(currentUserString);
+      //this.currentUser = JSON.parse(currentUserString);
+      this.currentUser = currentUserString;
     }
   }
 
