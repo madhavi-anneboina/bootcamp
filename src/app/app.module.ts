@@ -32,6 +32,7 @@ import { ViewpanelComponent } from './viewpanel/viewpanel.component';
 import { ViewitemComponent } from './viewitem/viewitem.component';
 import { NewloginComponent } from './newlogin/newlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeetableComponent } from './employeetable/employeetable.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ViewpanelComponent,
     ViewitemComponent,
     NewloginComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeetableComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
 import { ViewpanelComponent } from './viewpanel/viewpanel.component';
 import { NewloginComponent } from './newlogin/newlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeetableComponent } from './employeetable/employeetable.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
   {path :'users/:id', component:UserComponent, pathMatch:"full"},
   {path :'viewpanel', component:ViewpanelComponent, pathMatch:"full"},
   {path :'newlogin', component:NewloginComponent, pathMatch:"full"},
-  {path :'dashboard', component:DashboardComponent, pathMatch:"full"}
+  {path :'dashboard', component:DashboardComponent, pathMatch:"full"},
+  {path :'employee', component:EmployeetableComponent, pathMatch:"full"}
   
 
 

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfileService } from '../profile.service';
+enum APP_USER{
+  Login = 'currentUser'
+}
 
 @Component({
   selector: 'app-newlogin',
@@ -12,7 +16,7 @@ export class NewloginComponent {
   password: string = '';
   invalidCredentials: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private profileService: ProfileService) {}
   login() {
     const mockUsers = [
       { Username: 'Abc', Password: 'Pass@1234', Name: 'Bob' },
@@ -20,7 +24,8 @@ export class NewloginComponent {
     ];
     const user = mockUsers.find(u => u.Username === this.username && u.Password === this.password);
     if (user) {
-      localStorage.setItem('currentUser', JSON.stringify(user));
+      //localStorage.setItem(APP_USER.Login, JSON.stringify(user));
+      this.profileService.userInfo = user;
       this.router.navigate(['/dashboard']);
     } else {
       this.invalidCredentials = true;
