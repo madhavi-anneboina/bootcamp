@@ -6,40 +6,67 @@ import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-employeetable',
   templateUrl: './employeetable.component.html',
-  styleUrls: ['./employeetable.component.css']
+  styleUrls: ['./employeetable.component.css'],
 })
 export class EmployeetableComponent {
   employees: any[];
-  designations: string[];
+  employeeTotalSalary = 0;
+  salaryByDesignation = [] as any;
+  countByDesignation = [] as any;
 
   constructor(private employeeService: EmployeeService) {
     this.employees = Object.values(this.employeeService.mockEmployee);
-    this.designations = this.getUniqueDesignations();
+    this.getTotalSalary();
+    const designations = this.getUniqueDesignations();
+    this.getEmployeeCountByDesignation(designations);
+    this.getTotalSalaryByDesignation(designations);
   }
 
-  getTotalSalary(): number {
-    let total = 0;
+  getTotalSalary(): void {
+    //let total = 0;
+    this.employeeTotalSalary = 0;
     for (const employee of this.employees) {
-      total += parseFloat(employee.Salary.replace('$', '').replace(',', ''));
+      this.employeeTotalSalary += parseFloat(
+        employee.Salary.replace('$', '').replace(',', '')
+      );
     }
-    return total;
   }
 
-  getEmployeeCountByDesignation(designation: string): number {
-    return this.employees.filter(employee => employee.Designation === designation).length;
+  getEmployeeCountByDesignation(designations: string[]): void {
+    this.countByDesignation = [];
+
+    designations.forEach((designation) => {
+      const filterDesignation = this.employees.filter(
+        (employee) => employee.Designation === designation
+      ).length;
+
+      this.countByDesignation.push({
+        name: designation,
+        count: filterDesignation,
+      });
+    });
   }
 
-  getTotalSalaryByDesignation(designation: string): number {
-    let total = 0;
-    for (const employee of this.employees) {
-      if (employee.Designation === designation) {
-        total += parseFloat(employee.Salary.replace('$', '').replace(',', ''));
-      }
-    }
-    return total;
+  getTotalSalaryByDesignation(designations: string[]): void {
+    this.salaryByDesignation = [];
+    designations.forEach((designation) => {
+      const filterDesignation = this.employees.filter(
+        (employee) => employee.Designation === designation
+      ).reduce((prev, cur)=>  prev += parseFloat(cur.Salary.replace('$', '').replace(',', '')), 0);
+
+      this.salaryByDesignation.push({
+        name: designation,
+        salary: filterDesignation,
+      });
+    });
   }
 
   private getUniqueDesignations(): string[] {
-    return [...new Set(this.employees.map(employee => employee.Designation))];
+    const designations = this.employees.map((employee) => employee.Designation);
+    const uniQueDes = {} as Record<string, boolean>;
+    for (let designation of designations) {
+      uniQueDes[designation] = true;
+    }
+    return Object.keys(uniQueDes);
   }
 }

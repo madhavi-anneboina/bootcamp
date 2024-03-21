@@ -1,55 +1,54 @@
 <!-- employeetable.component.html -->
 
 <table border="1">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Designation</th>
-        <th>Salary</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employee of employees">
-        <td>{{ employee.Name }}</td>
-        <td>{{ employee.Designation }}</td>
-        <td>{{ employee.Salary }}</td>
-        <td>{{ employee.City }}</td>
-      </tr>
-      <tr>
-        <td colspan="2">Total</td>
-        <td colspan="2">${{ getTotalSalary() }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Designation</th>
-        <th>Count</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let designation of designations">
-        <td>{{ designation }}</td>
-        <td>{{ getEmployeeCountByDesignation(designation) }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Designation</th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let designation of designations">
-        <td>{{ designation }}</td>
-        <td>${{ getTotalSalaryByDesignation(designation) }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Salary</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.Name }}</td>
+      <td>{{ employee.Designation }}</td>
+      <td>{{ employee.Salary }}</td>
+      <td>{{ employee.City }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">Total</td>
+      <td colspan="2">${{ employeeTotalSalary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Designation</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let designation of countByDesignation">
+      <td>{{ designation.name }}</td>
+      <td>{{ designation.count }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Designation</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let designation of salaryByDesignation">
+      <td>{{ designation.name }}</td>
+      <td>${{ designation.salary }}</td>
+    </tr>
+  </tbody>
+</table>
