@@ -33,6 +33,7 @@ import { ViewitemComponent } from './viewitem/viewitem.component';
 import { NewloginComponent } from './newlogin/newlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeetableComponent } from './employeetable/employeetable.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { EmployeetableComponent } from './employeetable/employeetable.component'
     ViewitemComponent,
     NewloginComponent,
     DashboardComponent,
-    EmployeetableComponent
+    EmployeetableComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
