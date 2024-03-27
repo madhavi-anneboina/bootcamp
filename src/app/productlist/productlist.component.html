@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="product" *ngFor="let product of products; let i = index">
+    <img class="product-image" [src]="product.image" alt="Product Image" />
+    <p>{{ product.ProductName }}</p>
+    <p>Quantity: {{ product.Quantity }}</p>
+    <p>Price: {{ product.Price }}</p>
+    <!-- <div>
+      <button (click)="decrementQuantity(i)">-</button>
+      {{ product.Quantity }}
+      <button (click)="incrementQuantity(i)">+</button>
+    </div> -->
+    <div *ngIf="product.qty > 0">
+      <button (click)="decrementQuantity(product)">-</button>
+      {{ product.qty }}
+      <button (click)="incrementQuantity(product)">+</button>
+    </div>
+    <button *ngIf="product.qty == 0" (click)="addToCart(product)">
+      Add to Cart
+    </button>
+  </div>
+</div>
