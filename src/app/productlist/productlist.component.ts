@@ -11,29 +11,17 @@ export class ProductlistComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    //this.products = this.cartService.getProducts();
-    this.cartService.products$.subscribe((products) => {
-      this.products = products;
-      // const findProduct = this.products.find((product)=> product.ProductName==)
-    });
+
+    // this.products = this.cartService.getProducts();
+   this.products = this.cartService.products
+    // this.cartService.products$.subscribe((products) => {
+    //   console.log(products)
+    //   this.products = products;
+     
+    //   // const findProduct = this.products.find((product)=> product.ProductName==)
+    // });
   }
 
-  // incrementQuantity(index: number) {
-  //   if (index >= 0 && index < this.products.length) {
-  //     const product = this.products[index];
-  //     if (product) {
-  //       this.cartService.incrementQuantity(product);
-  //     }
-  //   }
-  // }
-  // decrementQuantity(index: number) {
-  //   if (index >= 0 && index < this.products.length) {
-  //     const product = this.products[index];
-  //     if (product) {
-  //       this.cartService.decrementQuantity(product);
-  //     }
-  //   }
-  // }
 
   incrementQuantity(product: any) {
     this.cartService.addToCart(product);

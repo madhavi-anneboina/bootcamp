@@ -8,6 +8,7 @@ import { CartService } from '../cart.service';
 })
 export class CartviewComponent implements OnInit {
   cartItems: any[] = [];
+  totalcount: number | undefined;
   constructor(private cartService:CartService){}
 
   ngOnInit(): void {
@@ -15,9 +16,8 @@ export class CartviewComponent implements OnInit {
    
   }
   incrementQuantity(item: any) {
-    this.cartService.incrementQuantity(item);
+    this.cartService.addToCart(item);
   }
-
 
   decrementQuantity(item: any) {
     this.cartService.decrementQuantity(item);
@@ -26,24 +26,24 @@ export class CartviewComponent implements OnInit {
   removeFromCart(index: number) {
     this.cartService.removeFromCart(index);
   }
+ 
+  getTotal(item: any): number {
+    return this.cartService.calculateSubtotal(item);
+  }
+
 
   calculateTotal(): number {
-    return this.cartItems.reduce((total, item) => total + (item.Price * item.Quantity), 0);
+    return this.cartItems.reduce((total, item) => {
+      const price = parseFloat(item.Price.replace('$', ''));
+      const quantity = parseInt(item.qty);
+      if (!isNaN(price) && !isNaN(quantity)) {
+        const subtotal = price * quantity;
+        return total + subtotal;
+        console.log(total + subtotal)
+      } else {
+        console.error(`Invalid Price or Quantity for item: `, item);
+        return total;
+      }
+    }, 0);
   }
- 
-
-  // calculateTotal(): number {
-  //   return this.cartItems.reduce((total, item) => {
-  //     const price = parseFloat(item.Price.replace('$', ''));
-  //     const quantity = parseInt(item.Quantity);
-  //     if (!isNaN(price) && !isNaN(quantity)) {
-  //       const subtotal = price * quantity;
-  //       console.log(`Price: ${price}, Quantity: ${quantity}, Subtotal: ${subtotal}`);
-  //       return total + subtotal;
-  //     } else {
-  //       console.error(`Invalid Price or Quantity for item: `, item);
-  //       return total;
-  //     }
-  //   }, 0);
-  // }
 }

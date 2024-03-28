@@ -14,11 +14,11 @@
         <td>
           <!-- - {} + functionality -->
          <button (click)="decrementQuantity(item)">-</button>
-          {{ item.Quantity }}
+          {{ item.qty }}
           <button (click)="incrementQuantity(item)">+</button> 
         </td>
         <td>{{ item.Price }}</td>
-        <td>{{ item.Price * item.Quantity }}</td>
+        <td> {{ getTotal(item)}}</td>
         <td>
             <!-- <button (click)="removeFromCart(i)">Remove</button> -->
         </td>
@@ -26,5 +26,7 @@
     </tbody>
   </table>
   <p>Grand Total: {{ calculateTotal() }}</p>
+ 
+
   
   

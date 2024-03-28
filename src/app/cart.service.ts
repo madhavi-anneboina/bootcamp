@@ -89,44 +89,50 @@ export class CartService {
     //this.updateCartItemCount();
   }
 
-  // addToCart(item: any) {
-  //   const existingItem = this.cartItems.find(cartItem => cartItem.product === item.product);
-  //   if (existingItem) {
-  //     this.incrementQuantity(existingItem);
-  //   } else {
-  //     this.cartItems.push({ ...item, Quantity: 1 });
-  //   }
-  //   this.updateLocalStorage();
-  // }
+
   removeFromCart(index: number) {
     this.cartItems.splice(index, 1);
     this.updateLocalStorage();
   }
 
-  incrementQuantity(item: any) {
-    const index = this.cartItems.findIndex(
-      (cartItem) => cartItem.ProductName === item.ProductName
-    );
-    if (index !== -1) {
-      if (this.cartItems[index].Quantity < this.cartItems[index].maxQuantity) {
-        this.cartItems[index].Quantity++;
-        this.updateLocalStorage();
-      } else {
-        alert('Maximum quantity reached for this item.');
-      }
-    }
-  }
+  // incrementQuantity(item: any) {
+  //   const index = this.cartItems.findIndex(
+  //     (cartItem) => cartItem.ProductName === item.ProductName
+  //   );
+  //   if (index !== -1) {
+  //     if (this.cartItems[index].Quantity < this.cartItems[index].maxQuantity) {
+  //       this.cartItems[index].Quantity++;
+  //       this.updateLocalStorage();
+  //     } else {
+  //       alert('Maximum quantity reached for this item.');
+  //     }
+  //   }
+  // }
+
+ 
 
   decrementQuantity(item: any) {
-    const index = this.cartItems.findIndex(
+    const existingCartItem = this.cartItems.findIndex(
       (cartItem) => cartItem.ProductName === item.ProductName
     );
-    debugger;
-    if (index !== -1 && this.cartItems[index].Quantity > 1) {
-      this.cartItems[index].Quantity--;
-      this.updateLocalStorage();
-    }
+    const existingProductItem = this.products.findIndex(
+      (product) => product.ProductName === item.ProductName
+    );
+    if (existingCartItem > -1) {
+      if (this.cartItems[existingCartItem].qty >0 
+      ) {
+        this.products[existingProductItem].qty -= 1;
+        this.cartItems[existingCartItem].qty -= 1;
+      } 
+    } else {
+      item.qty = 0;
+      this.cartItems.push({
+        ...item,
+        qty: 0,
+      });
   }
+  this.updateLocalStorage();
+}
 
   updateLocalStorage() {
     this.cartItemsSubject.next(this.cartItems);
@@ -143,4 +149,16 @@ export class CartService {
       };
     });
   }
+
+    calculateSubtotal(item: any): number {
+      const price = parseFloat(item.Price.replace('$', ''));
+      const quantity = parseInt(item.qty);
+      if (!isNaN(price) && !isNaN(quantity)) {
+        return price * quantity;
+      } else {
+        console.error(`Invalid Price or Quantity for item: `, item);
+        return 0;
+      }
+    }
+  
 }
