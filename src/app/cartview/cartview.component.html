@@ -1,0 +1,32 @@
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems; let i = index">
+        <td>{{ item.ProductName }}</td>
+        <td>
+          <!-- - {} + functionality -->
+         <button (click)="decrementQuantity(item)">-</button>
+          {{ item.qty }}
+          <button (click)="incrementQuantity(item)">+</button> 
+        </td>
+        <td>{{ item.Price }}</td>
+        <td> {{ getTotal(item)}}</td>
+        <td>
+            <!-- <button (click)="removeFromCart(i)">Remove</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Grand Total: {{ calculateTotal() }}</p>
+ 
+
+  
+  

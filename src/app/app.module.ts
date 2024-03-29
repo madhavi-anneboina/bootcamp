@@ -34,6 +34,9 @@ import { NewloginComponent } from './newlogin/newlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeetableComponent } from './employeetable/employeetable.component';
 import { HeaderComponent } from './header/header.component';
+import { ProductlistComponent } from './productlist/productlist.component';
+import { CartviewComponent } from './cartview/cartview.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { HeaderComponent } from './header/header.component';
     NewloginComponent,
     DashboardComponent,
     EmployeetableComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductlistComponent,
+    CartviewComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
