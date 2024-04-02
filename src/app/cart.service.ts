@@ -39,8 +39,9 @@ export class CartService {
   private cartItemCountSubject: BehaviorSubject<number> =
     new BehaviorSubject<number>(0);
   cartItemCount$ = this.cartItemCountSubject.asObservable();
-
+   
   constructor() {
+    console.log(this.cartItemCount$ )
     this.getProducts();
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
@@ -54,12 +55,14 @@ export class CartService {
         }
       });
       console.log('Constrcutor', this.products);
-      this.cartItemsSubject.next(this.cartItems);
-      this.cartItemCountSubject.next(this.cartItems.length);
-      this.productsSubject.next(this.products);
+      // this.cartItemsSubject.next(this.cartItems);
+      // this.cartItemCountSubject.next(this.cartItems.length);
+      // this.productsSubject.next(this.products);
+      this.updateLocalStorage();
     }
   }
-  addToCart(item: any) {
+  addToCart(item: any) { 
+    debugger;
     const existingCartItem = this.cartItems.findIndex(
       (cartItem) => cartItem.ProductName === item.ProductName
     );
@@ -78,21 +81,25 @@ export class CartService {
       }
     } else {
       item.qty = 1;
-      this.cartItems.push({
-        ...item,
-        qty: 1,
-      });
+      this.cartItems.push({...item, qty: 1})
+      this.products.find(product => product.ProductName === item.ProductName).qty += 1; // Update quantity in products array
     }
-
-    // console.log(this.cartItems)
     this.updateLocalStorage();
+    this.updateCartItemCount();
+    // console.log(this.cartItems)
+  
     //this.updateCartItemCount();
   }
 
+  private updateCartItemCount() {
+    this.cartItemCountSubject.next(this.cartItems.length);
+  }
 
   removeFromCart(index: number) {
     this.cartItems.splice(index, 1);
     this.updateLocalStorage();
+    this.updateCartItemCount();
+   
   }
 
   // incrementQuantity(item: any) {
@@ -112,8 +119,9 @@ export class CartService {
  
 
   decrementQuantity(item: any) {
+ 
     const existingCartItem = this.cartItems.findIndex(
-      (cartItem) => cartItem.ProductName === item.ProductName
+      (cartItem) => cartItem.ProductName === item.ProductName   
     );
     const existingProductItem = this.products.findIndex(
       (product) => product.ProductName === item.ProductName

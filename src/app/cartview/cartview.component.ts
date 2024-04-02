@@ -13,22 +13,29 @@ export class CartviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartService.cartItems;
+    this.getTotal()
    
   }
   incrementQuantity(item: any) {
     this.cartService.addToCart(item);
+    this.getTotal()
   }
 
   decrementQuantity(item: any) {
     this.cartService.decrementQuantity(item);
+    this.getTotal()
   }
 
   removeFromCart(index: number) {
     this.cartService.removeFromCart(index);
   }
  
-  getTotal(item: any): number {
-    return this.cartService.calculateSubtotal(item);
+  getTotal(): void {
+    // return  this.cartService.calculateSubtotal(item);
+    this.cartItems.forEach((item)=>{
+       item['total'] = this.cartService.calculateSubtotal(item)
+    })
+
   }
 
 
